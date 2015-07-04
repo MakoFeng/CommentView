@@ -83,7 +83,7 @@ public class CommentView extends LinearLayout {
 
     public interface OnUserItemClickListener {
 
-        public void onTextClick(CommentModel commentModel);
+        void onTextClick(CommentModel commentModel);
     }
 
 
