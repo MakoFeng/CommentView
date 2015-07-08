@@ -39,7 +39,8 @@ public class CommentView extends LinearLayout {
 
 
     public void initCommentLayout(List<CommentModel> commentModels) {
-
+        
+        removeAllViewsInLayout();
 
         if (commentModels == null || commentModels.size() == 0)
             return;
@@ -58,6 +59,8 @@ public class CommentView extends LinearLayout {
             UserClickSpan userClickSpan = new UserClickSpan(false) {
                 @Override
                 public void onClick(View view) {
+                    if (onTextClick == null)
+                        return;
                     onTextClick.onTextClick(model);
                 }
             };
